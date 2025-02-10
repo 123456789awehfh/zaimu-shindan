@@ -317,9 +317,9 @@
 <form class="Form" method="post" action="https://123456789awehfh.github.io/zaimu-shindan/check.html" name="Form" id="financeSurvey" onsubmit="return doPost();">
     <h2 class="heading-17">
         <span>01</span>
-        日本の税率は先進国の中でも少ないと思う
+        日本の一人あたりの税負担は先進国の中でも少ないと思う
     </h2>
-    <p>日本の税率のデータを詳しく見て考えるのではなく、自分が考えることに近いものをクリックしてください。</p>
+    <p>日本国民の一人あたりの税負担は先進国である他国の一人当たり税負担と比べ少ないと思うのか、自分が考えることに近いものをクリックしてください。</p>
     <fieldset class="radio-3">
         <label for="radio1-2">
             <input type="radio" name="radio1" id="radio1-2" value="2" required="">
@@ -394,6 +394,26 @@
             そう思わない
         </label>
     </fieldset>
+
+    <h2 class="heading-17">
+        <span>05</span>
+        緊縮財政はいい政策だと思う
+    </h2>
+    <p>日本政府や財務省が行ってきた「緊縮財政」は良い制作であったと思うか、自分が考えることに近いものをクリックしてください。</p>
+    <fieldset class="radio-3">
+        <label for="radio5-2">
+            <input type="radio" name="radio5" id="radio5-2" value="2" required="">
+            そう思う
+        </label>
+        <label for="radio4-1">
+            <input type="radio" name="radio5" id="radio5-1" value="1" required="">
+            どちらとも思わない
+        </label>
+        <label for="radio4-0">
+            <input type="radio" name="radio5" id="radio5-0" value="0" required="">
+            そう思わない
+        </label>
+    </fieldset>
     
     <button type="submit" class="button-29" name="sindan">診断する</button>
 </form>
@@ -412,11 +432,12 @@
 <script>
 function doPost() {
     var form = document.getElementById('financeSurvey');
-    var radio1 = (Number(form.radio1.value) * 12.5);
-    var radio2 = (Number(form.radio2.value) * 12.5);
-    var radio3 = (Number(form.radio3.value) * 12.5);
-    var radio4 = (Number(form.radio4.value) * 12.5);
-    var kakuritu = Number(radio1 + radio2 + radio3 + radio4);
+    var radio1 = (Number(form.radio1.value) * 10);
+    var radio2 = (Number(form.radio2.value) * 10);
+    var radio3 = (Number(form.radio3.value) * 10);
+    var radio4 = (Number(form.radio4.value) * 10);
+    var radio5 = (Number(form.radio5.value) * 10);
+    var kakuritu = Number(radio1 + radio2 + radio3 + radio4 + radio5);
     location.href = "kekka.html?values=" + kakuritu;
     return false; // Prevent the form from submitting in the traditional way
 }
