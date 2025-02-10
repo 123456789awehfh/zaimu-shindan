@@ -1,506 +1,555 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-            <style>  .button-54 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 250px;
-      margin: 0 auto;
-      padding: .9em 3em .9em 2em;
-      border: 1px solid #e75400;
-      border-radius: 5px;
-      background-color: #fff;
-      color: #e75400;
-      font-size: 1em;
-  }
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  .button-54::after {
-      position: absolute;
-      right: 2em;
-      transform: translateY(-50%);
-      transform-origin: left;
-      width: 2em;
-      height: .5em;
-      background-color: #e75400;
-      clip-path: polygon(0 100%, 100% 100%, 70% 40%, 70% 90%, 0% 90%);
-      content: '';
-      transition: transform .3s;
-  }
-
-  .button-54:hover::after {
-      transform: translateY(-50%) scaleX(1.4);
-  }
-
-  .radio-3 {
-      border: none;
-  }
-
-  .radio-3 label {
-      display: flex;
-      align-items: center;
-      gap: 0 .5em;
-      position: relative;
-      max-width: 200px;
-      margin-bottom: .4em;
-      padding: .5em .7em;
-      border: 1px solid #e75400;
-      border-radius: 25px;
-      background-color: #e7540026;
-      cursor: pointer;
-  }
-
-  .radio-3 label:has(:checked) {
-      background-color: #e75400;
-      color: #fff;
-  }
-
-  .radio-3 label::before,
-  .radio-3 label:has(:checked)::after {
-      border-radius: 50%;
-      content: '';
-  }
-
-  .radio-3 label::before {
-      width: 14px;
-      height: 14px;
-      background-color: #fff;
-  }
-
-  .radio-3 label:has(:checked)::after {
-      position: absolute;
-      top: 50%;
-      left: calc(7px + .7em);
-      transform: translate(-50%, -50%);
-      width: 7px;
-      height: 7px;
-      background-color: #e75400;
-  }
-
-  .radio-3 input {
-      display: none;
-  }
-
-  .heading-17 {
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      position: relative;
-      padding: .5em .7em;
-      overflow: hidden;
-      border: 2px solid #e75400;
-      border-radius: 5px;
-      color: #333333;
-  }
-
-  .heading-17:before {
-      position: absolute;
-      top: -50%;
-      left: -30px;
-      z-index: -1;
-      transform: rotate(25deg);
-      width: 100px;
-      height: 200%;
-      background-color: #e75400;
-      content: '';
-  }
-
-  .heading-17 span {
-      margin-right: 1.1em;
-      color: #fff;
-      font-size: 1.1em
-  }
-
-  .button-29 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 250px;
-      margin: 0 auto;
-      padding: .9em 2em;
-      overflow: hidden;
-      border: 1px solid #e75400;
-      border-radius: 25px;
-      background-color: #fff;
-      color: #e75400;
-      font-size: 1em;
-  }
-
-  .button-29:hover {
-      background-color: transparent;
-      color: #fff;
-  }
-
-  .button-29::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 0;
-      height: 100%;
-      background-color: #e75400;
-      content: '';
-      transition: width .3s ease;
-  }
-
-  .button-29:hover::before {
-      width: 100%;
-  }
-
-  .title {
-      color: #E75400;
-      border: solid 3px #E75400;
-      padding: 0.5em;
-      border-radius: 0.5em;
-      align-items: center;
-      text-align: center;
-  }
-
-  .subtitle-1 {
-      position: relative;
-      padding: 0.6em;
-      background: #E75400;
-      border-radius: 0.5em;
-  }
-
-  .subtitle-1:after {
-      position: absolute;
-      content: '';
-      top: 100%;
-      left: 30px;
-      border: 15px solid transparent;
-      border-top: 15px solid #E75400;
-      width: 0;
-      height: 0;
-  }
-
-  .qa-6 {
-      max-width: 500px;
-      margin-bottom: 5px;
-      border-bottom: 2px solid #e7f0f0;
-  }
-
-  .qa-6 summary {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      padding: 1em 2em 1em 3em;
-      color: #333333;
-      font-weight: 600;
-      cursor: pointer;
-  }
-
-  .qa-6 summary::before,
-  .qa-6 p::before {
-      position: absolute;
-      left: 1em;
-      font-weight: 600;
-      font-size: 1.3em;
-  }
-
-  .qa-6 summary::before {
-      color: #75bbff;
-      content: "Q";
-  }
-
-  .qa-6 summary::after {
-      transform: translateY(-25%) rotate(45deg);
-      width: 7px;
-      height: 7px;
-      margin-left: 10px;
-      border-bottom: 3px solid #333333b3;
-      border-right: 3px solid #333333b3;
-      content: '';
-      transition: transform .5s;
-  }
-
-  .qa-6[open] summary::after {
-      transform: rotate(225deg);
-  }
-
-  .qa-6 p {
-      position: relative;
-      transform: translateY(-10px);
-      opacity: 0;
-      margin: 0;
-      padding: .3em 3em 1.5em;
-      color: #333;
-      transition: transform .5s, opacity .5s;
-  }
-
-  .qa-6[open] p {
-      transform: none;
-      opacity: 1;
-  }
-
-  .qa-6 p::before {
-      color: #ff8d8d;
-      line-height: 1.2;
-      content: "A";
-  }
-
-  .heading-22 {
-      padding: .5em .7em;
-      border-left: 5px solid #e75400;
-      background-color: #ffe8db;
-      color: #333333;
-  }
-
-  .kakuritu {
-      border-bottom: solid 3px skyblue;
-      position: relative;
-      color: #E75400;
-  }
-
-  .kakuritu:after {
-      position: absolute;
-      content: " ";
-      display: block;
-      border-bottom: solid 3px #ffc778;
-      bottom: -3px;
-      width: 30%;
-  }
-
-  .text {
-      position: relative;
-      padding: 5px 26px 5px 42px;
-      background: #fff0d9;
-      font-size: 20px;
-      color: #2d2d2d;
-      margin-left: -33px;
-      line-height: 1.3;
-      border-bottom: solid 3px orange;
-      z-index: -2;
-  }
-
-  .text:before {
-      position: absolute;
-      content: '';
-      left: -2px;
-      top: -2px;
-      width: 0;
-      height: 0;
-      border: none;
-      border-left: solid 40px white;
-      border-bottom: solid 79px transparent;
-      z-index: -1;
-  }
-
-  .text:after {
-      position: absolute;
-      content: '';
-      right: -3px;
-      top: -7px;
-      width: 0;
-      height: 0;
-      border: none;
-      border-left: solid 40px transparent;
-      border-bottom: solid 79px white;
-      z-index: -1;
-  }</style>
-        </head>
-        <body>
-            
+    <style>
+        .modoru_button {
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+	font-weight: bold;
+            padding-block: 4px;
+            padding-inline: 25px;
+	border: 1px solid #e75400;
+	color: #e75400;
+	border-radius: 5vh;
+	transition: 0.5s;
+        }
+        .modoru_button:hover{
+            background: #e8ded9;
+        }
 
 
+        .tsugihe_button {
+	text-align: center;
+	text-decoration: none;
+	margin: auto;
+	font-weight: bold;
+            padding-block: 4px;
+            padding-inline: 25px;
+	border: 1px solid #e75400;
+	color: #fff;
+            background: #e75400;
+	border-radius: 5vh;
+	transition: 0.5s;
+        }
+        .tsugihe_button:hover{
+            background: #b84300;
+        }
+        .button-54 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 250px;
+            margin: 0 auto;
+            padding: .9em 3em .9em 2em;
+            border: 1px solid #e75400;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #e75400;
+            font-size: 1em;
+        }
 
-  <title>ザイム真理教 信仰状態診断サイト</title>
-  <link rel="apple-touch-icon" href="https://www.at-s.com/news/images/n146/1456464/PN2024042201001072.-.-.CI0003.jpg">
+        .button-54::after {
+            position: absolute;
+            right: 2em;
+            transform: translateY(-50%);
+            transform-origin: left;
+            width: 2em;
+            height: .5em;
+            background-color: #e75400;
+            clip-path: polygon(0 100%, 100% 100%, 70% 40%, 70% 90%, 0% 90%);
+            content: '';
+            transition: transform .3s;
+        }
+
+        .button-54:hover::after {
+            transform: translateY(-50%) scaleX(1.4);
+        }
+
+        .radio-3 {
+            border: none;
+        }
+
+        .radio-3 label {
+            display: flex;
+            align-items: center;
+            gap: 0 .5em;
+            position: relative;
+            max-width: 200px;
+            margin-bottom: .4em;
+            padding: .5em .7em;
+            border: 1px solid #e75400;
+            border-radius: 25px;
+            background-color: #e7540026;
+            cursor: pointer;
+        }
+
+        .radio-3 label:has(:checked) {
+            background-color: #e75400;
+            color: #fff;
+        }
+
+        .radio-3 label::before,
+        .radio-3 label:has(:checked)::after {
+            border-radius: 50%;
+            content: '';
+        }
+
+        .radio-3 label::before {
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+        }
+
+        .radio-3 label:has(:checked)::after {
+            position: absolute;
+            top: 50%;
+            left: calc(7px + .7em);
+            transform: translate(-50%, -50%);
+            width: 7px;
+            height: 7px;
+            background-color: #e75400;
+        }
+
+        .radio-3 input {
+            display: none;
+        }
+
+        .heading-17 {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            position: relative;
+            padding: .5em .7em;
+            overflow: hidden;
+            border: 2px solid #e75400;
+            border-radius: 5px;
+            color: #333333;
+        }
+
+        .heading-17:before {
+            position: absolute;
+            top: -50%;
+            left: -30px;
+            z-index: -1;
+            transform: rotate(25deg);
+            width: 100px;
+            height: 200%;
+            background-color: #e75400;
+            content: '';
+        }
+
+        .heading-17 span {
+            margin-right: 1.1em;
+            color: #fff;
+            font-size: 1.1em
+        }
+
+        .button-29 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 250px;
+            margin: 0 auto;
+            padding: .9em 2em;
+            overflow: hidden;
+            border: 1px solid #e75400;
+            border-radius: 25px;
+            background-color: #fff;
+            color: #e75400;
+            font-size: 1em;
+        }
+
+        .button-29:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .button-29::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 0;
+            height: 100%;
+            background-color: #e75400;
+            content: '';
+            transition: width .3s ease;
+        }
+
+        .button-29:hover::before {
+            width: 100%;
+        }
+
+        .title {
+            color: #E75400;
+            border: solid 3px #E75400;
+            padding: 0.5em;
+            border-radius: 0.5em;
+            align-items: center;
+            text-align: center;
+        }
+
+        .subtitle-1 {
+            position: relative;
+            padding: 0.6em;
+            background: #E75400;
+            border-radius: 0.5em;
+        }
+
+        .subtitle-1:after {
+            position: absolute;
+            content: '';
+            top: 100%;
+            left: 30px;
+            border: 15px solid transparent;
+            border-top: 15px solid #E75400;
+            width: 0;
+            height: 0;
+        }
+
+        .qa-6 {
+            max-width: 500px;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #e7f0f0;
+        }
+
+        .qa-6 summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 1em 2em 1em 3em;
+            color: #333333;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .qa-6 summary::before,
+        .qa-6 p::before {
+            position: absolute;
+            left: 1em;
+            font-weight: 600;
+            font-size: 1.3em;
+        }
+
+        .qa-6 summary::before {
+            color: #75bbff;
+            content: "Q";
+        }
+
+        .qa-6 summary::after {
+            transform: translateY(-25%) rotate(45deg);
+            width: 7px;
+            height: 7px;
+            margin-left: 10px;
+            border-bottom: 3px solid #333333b3;
+            border-right: 3px solid #333333b3;
+            content: '';
+            transition: transform .5s;
+        }
+
+        .qa-6[open] summary::after {
+            transform: rotate(225deg);
+        }
+
+        .qa-6 p {
+            position: relative;
+            transform: translateY(-10px);
+            opacity: 0;
+            margin: 0;
+            padding: .3em 3em 1.5em;
+            color: #333;
+            transition: transform .5s, opacity .5s;
+        }
+
+        .qa-6[open] p {
+            transform: none;
+            opacity: 1;
+        }
+
+        .qa-6 p::before {
+            color: #ff8d8d;
+            line-height: 1.2;
+            content: "A";
+        }
+
+        .heading-22 {
+            padding: .5em .7em;
+            border-left: 5px solid #e75400;
+            background-color: #ffe8db;
+            color: #333333;
+        }
+
+        .kakuritu {
+            border-bottom: solid 3px skyblue;
+            position: relative;
+            color: #E75400;
+        }
+
+        .kakuritu:after {
+            position: absolute;
+            content: " ";
+            display: block;
+            border-bottom: solid 3px #ffc778;
+            bottom: -3px;
+            width: 30%;
+        }
+
+        .text {
+            position: relative;
+            padding: 5px 26px 5px 42px;
+            background: #fff0d9;
+            font-size: 20px;
+            color: #2d2d2d;
+            margin-left: -33px;
+            line-height: 1.3;
+            border-bottom: solid 3px orange;
+            z-index: -2;
+        }
+
+        .text:before {
+            position: absolute;
+            content: '';
+            left: -2px;
+            top: -2px;
+            width: 0;
+            height: 0;
+            border: none;
+            border-left: solid 40px white;
+            border-bottom: solid 79px transparent;
+            z-index: -1;
+        }
+
+        .text:after {
+            position: absolute;
+            content: '';
+            right: -3px;
+            top: -7px;
+            width: 0;
+            height: 0;
+            border: none;
+            border-left: solid 40px transparent;
+            border-bottom: solid 79px white;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
 
 
-  <h1 class="title">ザイム真理教 信仰状態診断</h1>
-  <p>ザイム真理教の信仰状態について診断できます。</p>
-  <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
-<form class="Form" method="post" action="https://123456789awehfh.github.io/zaimu-shindan/check.html" name="Form" id="financeSurvey" onsubmit="return doPost();">
-<div id="question-1">    
-<h2 class="heading-17">
-        <span>01</span>
-        日本の一人あたりの国民負担率は先進国の中でも少ないと思う
-    </h2>
-    <p>日本国民の一人あたりの国民負担率は先進国である他国の一人当たりの国民負担率と比べ少ないと思うのか、自分が考えることに近いものをクリックしてください。</p>
-    <fieldset class="radio-3">
-        <label for="radio1-2">
+
+
+    <title>ザイム真理教 信仰状態診断サイト</title>
+    <link rel="apple-touch-icon" href="https://www.at-s.com/news/images/n146/1456464/PN2024042201001072.-.-.CI0003.jpg">
+
+
+    <h1 class="title">ザイム真理教 信仰状態診断</h1>
+    <p>ザイム真理教の信仰状態について診断できます。</p>
+    <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
+    <form class="Form" method="post" action="https://123456789awehfh.github.io/zaimu-shindan/check.html" name="Form"
+        id="financeSurvey" onsubmit="return doPost();">
+        <div id="question-1">
+            <h2 class="heading-17">
+                <span>01</span>
+                日本の一人あたりの国民負担率は先進国の中でも少ないと思う
+            </h2>
+            <p>日本国民の一人あたりの国民負担率は先進国である他国の一人当たりの国民負担率と比べ少ないと思うのか、自分が考えることに近いものをクリックしてください。</p>
+            <fieldset class="radio-3">
+                <label for="radio1-2">
             <input type="radio" name="radio1" id="radio1-2" value="2" required="">
             そう思う
         </label>
-        <label for="radio1-1">
+                <label for="radio1-1">
             <input type="radio" name="radio1" id="radio1-1" value="1" required="">
             どちらとも思わない
         </label>
-        <label for="radio1-0">
+                <label for="radio1-0">
             <input type="radio" name="radio1" id="radio1-0" value="0" required="">
             そう思わない
         </label>
-    </fieldset>
-    <h2 class="heading-22">内容解説</h2>
-<details class="qa-6">
-    <summary>国民負担率とは？</summary>
-    <p>国民負担率とは、個人や会社の収入（所得）に占める、税金や、年金・健康保険・介護保険などの国に収めるお金の負担をする割合のことです。</p>
-</details>
-<details class="qa-6">
-    <summary>国民負担率が高ければどうなる？</summary>
-    <p>国民負担率が高くなると個人や会社に負担が増えてしまい、消費に使えるお金が減り、国内の経済が回らなくなったりします。</p>
-</details>
+            </fieldset>
+            <a href="#" class="modoru_button">戻る</a>
+            <a href="#question-2" class="tsugihe_button">次へ</a>
+            <h2 class="heading-22">内容解説</h2>
+            <details class="qa-6">
+                <summary>国民負担率とは？</summary>
+                <p>国民負担率とは、個人や会社の収入（所得）に占める、税金や、年金・健康保険・介護保険などの国に収めるお金の負担をする割合のことです。</p>
+            </details>
+            <details class="qa-6">
+                <summary>国民負担率が高ければどうなる？</summary>
+                <p>国民負担率が高くなると個人や会社に負担が増えてしまい、消費に使えるお金が減り、国内の経済が回らなくなったりします。</p>
+            </details>
             <br>
             <br>
-</div>
-<div id="question-2">    
-  <h1 class="title">ザイム真理教 信仰状態診断</h1>
-  <p>ザイム真理教の信仰状態について診断できます。</p>
-  <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
-    <h2 class="heading-17">
-        <span>02</span>
-        これ以上増税するのは仕方ないと思う
-    </h2>
-    <p>現在の税金を更に上げることは、日本の財政のためには仕方ないと考えるのか、自分が考えることに近いものをクリックしてください。</p>
-    <fieldset class="radio-3">
-        <label for="radio2-2">
+        </div>
+        <div id="question-2">
+            <h1 class="title">ザイム真理教 信仰状態診断</h1>
+            <p>ザイム真理教の信仰状態について診断できます。</p>
+            <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
+            <h2 class="heading-17">
+                <span>02</span>
+                これ以上増税するのは仕方ないと思う
+            </h2>
+            <p>現在の税金を更に上げることは、日本の財政のためには仕方ないと考えるのか、自分が考えることに近いものをクリックしてください。</p>
+            <fieldset class="radio-3">
+                <label for="radio2-2">
             <input type="radio" name="radio2" id="radio2-2" value="2" required="">
             そう思う
         </label>
-        <label for="radio2-1">
+                <label for="radio2-1">
             <input type="radio" name="radio2" id="radio2-1" value="1" required="">
             どちらとも思わない
         </label>
-        <label for="radio2-0">
+                <label for="radio2-0">
             <input type="radio" name="radio2" id="radio2-0" value="0" required="">
             そう思わない
         </label>
-    </fieldset>
-    <h2 class="heading-22">内容解説</h2>
-<details class="qa-6">
-    <summary>税金とは？</summary>
-    <p>税金とは、国に収めるお金のことです。</p>
-</details>
-<details class="qa-6">
-    <summary>税金が高くなると？</summary>
-    <p>税金が高くなると、国民負担率と同様、個人や会社に負担が増えてしまい、消費に使えるお金が減り、国内の経済が回らなくなったりします。</p>
-</details>
+            </fieldset>
+            <a href="#question-1" class="modoru_button">戻る</a>
+            <a href="#question-3" class="tsugihe_button">次へ</a>
+            <h2 class="heading-22">内容解説</h2>
+            <details class="qa-6">
+                <summary>税金とは？</summary>
+                <p>税金とは、国に収めるお金のことです。</p>
+            </details>
+            <details class="qa-6">
+                <summary>税金が高くなると？</summary>
+                <p>税金が高くなると、国民負担率と同様、個人や会社に負担が増えてしまい、消費に使えるお金が減り、国内の経済が回らなくなったりします。</p>
+            </details>
             <br>
             <br>
-</div>
-<div id="question-3"> 
-  <h1 class="title">ザイム真理教 信仰状態診断</h1>
-  <p>ザイム真理教の信仰状態について診断できます。</p>
-  <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
-    <h2 class="heading-17">
-        <span>03</span>
-        日本政府の財産は先進国と比べて少ないと思う
-    </h2>
-    <p>日本の政府の財産は他の先進国と比べて少ないと思うか、自分が考えることに近いものをクリックしてください。</p>
-    <fieldset class="radio-3">
-        <label for="radio3-0">
+        </div>
+        <div id="question-3">
+            <h1 class="title">ザイム真理教 信仰状態診断</h1>
+            <p>ザイム真理教の信仰状態について診断できます。</p>
+            <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
+            <h2 class="heading-17">
+                <span>03</span>
+                日本政府の財産は先進国と比べて少ないと思う
+            </h2>
+            <p>日本の政府の財産は他の先進国と比べて少ないと思うか、自分が考えることに近いものをクリックしてください。</p>
+            <fieldset class="radio-3">
+                <label for="radio3-0">
             <input type="radio" name="radio3" id="radio3-0" value="2" required="">
             そう思う
         </label>
-        <label for="radio3-1">
+                <label for="radio3-1">
             <input type="radio" name="radio3" id="radio3-1" value="1" required="">
             どちらとも思わない
         </label>
-        <label for="radio3-2">
+                <label for="radio3-2">
             <input type="radio" name="radio3" id="radio3-2" value="0" required="">
             そう思わない
         </label>
-    </fieldset>
-    <h2 class="heading-22">内容解説</h2>
-<details class="qa-6">
-    <summary>日本政府の財産とは？</summary>
-    <p>日本政府の財産は、日本政府が所有しているお金や土地、建物などのことを指します。</p>
-</details>
-<details class="qa-6">
-    <summary>財産は誰が管理している？</summary>
-    <p>多分、財務省</p>
-</details>
-                        <br>
+            </fieldset>
+            <a href="#question-2" class="modoru_button">戻る</a>
+            <a href="#question-4" class="tsugihe_button">次へ</a>
+            <h2 class="heading-22">内容解説</h2>
+            <details class="qa-6">
+                <summary>日本政府の財産とは？</summary>
+                <p>日本政府の財産は、日本政府が所有しているお金や土地、建物などのことを指します。</p>
+            </details>
+            <details class="qa-6">
+                <summary>財産は誰が管理している？</summary>
+                <p>多分、財務省</p>
+            </details>
             <br>
-</div>
-<div id="question-4">          
-              <h1 class="title">ザイム真理教 信仰状態診断</h1>
-  <p>ザイム真理教の信仰状態について診断できます。</p>
-  <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
-    <h2 class="heading-17">
-        <span>04</span>
-        日本の財政はもうすぐ破綻すると思う
-    </h2>
-    <p>日本の財政は破綻する直前なのか、自分が考えることに近いものをクリックしてください。</p>
-    <fieldset class="radio-3">
-        <label for="radio4-2">
+            <br>
+        </div>
+        <div id="question-4">
+            <h1 class="title">ザイム真理教 信仰状態診断</h1>
+            <p>ザイム真理教の信仰状態について診断できます。</p>
+            <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
+            <h2 class="heading-17">
+                <span>04</span>
+                日本の財政はもうすぐ破綻すると思う
+            </h2>
+            <p>日本の財政は破綻する直前なのか、自分が考えることに近いものをクリックしてください。</p>
+            <fieldset class="radio-3">
+                <label for="radio4-2">
             <input type="radio" name="radio4" id="radio4-2" value="2" required="">
             そう思う
         </label>
-        <label for="radio4-1">
+                <label for="radio4-1">
             <input type="radio" name="radio4" id="radio4-1" value="1" required="">
             どちらとも思わない
         </label>
-        <label for="radio4-0">
+                <label for="radio4-0">
             <input type="radio" name="radio4" id="radio4-0" value="0" required="">
             そう思わない
         </label>
-    </fieldset>
-    <h2 class="heading-22">内容解説</h2>
-<details class="qa-6">
-    <summary>財政破綻とは？</summary>
-    <p>国全体で行政活動や公共政策などの遂行のために行う、資金調達や資金管理、支出などの経済活動が正常にできなくなる状態のこと。</p>
-</details>
-<details class="qa-6">
-    <summary>財政破綻したらどうなる？</summary>
-    <p>インフラサービスが機能しなくなり、法律やルールといったものが守られなくなり、治安が急激に悪化する。 また、難民や略奪、飢餓などの問題が起こる。</p>
-</details>            <br>
+            </fieldset>
+            <a href="#question-3" class="modoru_button">戻る</a>
+            <a href="#question-5" class="tsugihe_button">次へ</a>
+            <h2 class="heading-22">内容解説</h2>
+            <details class="qa-6">
+                <summary>財政破綻とは？</summary>
+                <p>国全体で行政活動や公共政策などの遂行のために行う、資金調達や資金管理、支出などの経済活動が正常にできなくなる状態のこと。</p>
+            </details>
+            <details class="qa-6">
+                <summary>財政破綻したらどうなる？</summary>
+                <p>インフラサービスが機能しなくなり、法律やルールといったものが守られなくなり、治安が急激に悪化する。 また、難民や略奪、飢餓などの問題が起こる。</p>
+            </details> <br>
             <br>
-</div>
-<div id="question-5">    
-              <h1 class="title">ザイム真理教 信仰状態診断</h1>
-  <p>ザイム真理教の信仰状態について診断できます。</p>
-  <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
-    <h2 class="heading-17">
-        <span>05</span>
-        緊縮財政はいい政策だと思う
-    </h2>
-    <p>日本政府や財務省が行ってきた「緊縮財政」は良い制作であったと思うか、自分が考えることに近いものをクリックしてください。</p>
-    <fieldset class="radio-3">
-        <label for="radio5-2">
+        </div>
+        <div id="question-5">
+            <h1 class="title">ザイム真理教 信仰状態診断</h1>
+            <p>ザイム真理教の信仰状態について診断できます。</p>
+            <p>あなたはザイム真理教信者8000万人の中の一人かもしれません。</p>
+            <h2 class="heading-17">
+                <span>05</span>
+                緊縮財政はいい政策だと思う
+            </h2>
+            <p>日本政府や財務省が行ってきた「緊縮財政」は良い制作であったと思うか、自分が考えることに近いものをクリックしてください。</p>
+            <fieldset class="radio-3">
+                <label for="radio5-2">
             <input type="radio" name="radio5" id="radio5-2" value="2" required="">
             そう思う
         </label>
-        <label for="radio5-1">
+                <label for="radio5-1">
             <input type="radio" name="radio5" id="radio5-1" value="1" required="">
             どちらとも思わない
         </label>
-        <label for="radio5-0">
+                <label for="radio5-0">
             <input type="radio" name="radio5" id="radio5-0" value="0" required="">
             そう思わない
         </label>
-    </fieldset>
-    <h2 class="heading-22">内容解説</h2>
-<details class="qa-6">
-    <summary>緊縮財政とは？</summary>
-    <p>政府支出の抑制や増税といった手段で、財政赤字の削減や財政黒字をしようとする試み。</p>
-</details>
-<details class="qa-6">
-    <summary>緊縮財政のデメリットとは？</summary>
-    <p>政府支出の削減や税収の増加で公共事業、消費の減少などにより経済成長が鈍化する可能性がある。</p>
-</details>
-                        <br>
+            </fieldset>
+            <a href="#question-4" class="modoru_button">戻る</a>
+            <button type="submit" class="tsugihe_button" name="sindan">診断</button>
+            <h2 class="heading-22">内容解説</h2>
+            <details class="qa-6">
+                <summary>緊縮財政とは？</summary>
+                <p>政府支出の抑制や増税といった手段で、財政赤字の削減や財政黒字をしようとする試み。</p>
+            </details>
+            <details class="qa-6">
+                <summary>緊縮財政のデメリットとは？</summary>
+                <p>政府支出の削減や税収の増加で公共事業、消費の減少などにより経済成長が鈍化する可能性がある。</p>
+            </details>
             <br>
-    <button type="submit" class="button-29" name="sindan">診断する</button>
-</div>
-</form>
-<br>
-<h2 class="heading-22">よくあるご質問</h2>
-<details class="qa-6">
-    <summary>ザイム真理教とは？</summary>
-    <p>ザイム真理教とは、信者8000万人の巨大カルトです。</p>
-</details>
-<details class="qa-6">
-    <summary>財務省と何が違う？</summary>
-    <p>ザイム真理教は、財務省のことです。</p>
-</details>
+            <br>
+        </div>
+    </form>
+    <br>
+    <h2 class="heading-22">よくあるご質問</h2>
+    <details class="qa-6">
+        <summary>ザイム真理教とは？</summary>
+        <p>ザイム真理教とは、信者8000万人の巨大カルトです。</p>
+    </details>
+    <details class="qa-6">
+        <summary>財務省と何が違う？</summary>
+        <p>ザイム真理教は、財務省のことです。</p>
+    </details>
 
-<script>
-function doPost() {
+    <script>
+        function doPost() {
     var form = document.getElementById('financeSurvey');
     var radio1 = (Number(form.radio1.value) * 10);
     var radio2 = (Number(form.radio2.value) * 10);
@@ -511,6 +560,6 @@ function doPost() {
     location.href = "kekka.html?values=" + kakuritu;
     return false; // Prevent the form from submitting in the traditional way
 }
-</script>        
-    
+    </script>
+
 </body>
